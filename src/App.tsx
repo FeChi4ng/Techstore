@@ -1,23 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Products from "./pages/Products/Products";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (
     <>
       <Header />
 
-      <main className="px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-700">
-            Loja de tecnologia
-          </p>
-
-          <h1 className="mt-3 text-4xl font-bold text-slate-900">TechStore</h1>
-
-          <p className="mt-4 text-lg text-slate-600">
-            Nossa loja está começando.
-          </p>
-        </div>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/produtos" element={<Products />} />
+        <Route path="/carrinho" element={<Cart />} />
+      </Routes>
     </>
   );
 }
